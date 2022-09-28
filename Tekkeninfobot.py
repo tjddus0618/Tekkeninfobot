@@ -18,7 +18,6 @@ fname = [] #프레임표 이름 리스트
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents) #접두사
-token = os.environ['token']
 bot.remove_command('help')
 
 #커맨드 이모지
@@ -223,4 +222,4 @@ async def 캐릭터(ctx):
         embed.add_field(name=fname[i], value="#완성도 추가 예정#", inline=True)
     await ctx.send(embed=embed)
 
-bot.run(token)
+bot.run(os.environ['token'])
